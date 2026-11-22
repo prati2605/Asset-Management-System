@@ -1,0 +1,43 @@
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  application:
+    name: ams-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/ams_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ams_user
+    password: ams_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+server:
+  address: 0.0.0.0
+  port: 8081
+  ssl:
+    enabled: false
+
+# Changed from 'app.jwt' to just 'jwt' to match your code
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 3600000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: when-authorized
+    info:
+      enabled: true
