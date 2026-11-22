@@ -1,0 +1,88 @@
+:root {
+  /* Colors - Enterprise Railway Admin */
+  --railway-saffron: #f97d09;
+  --railway-blue: #0033a0;
+  --railway-blue-dark: #002266;
+  
+  --bg-main: #f4f6f8;
+  --bg-card: #ffffff;
+  
+  --text-primary: #1a1a1a;
+  --text-secondary: #5e6a75;
+  --text-inverse: #ffffff;
+  
+  --border-light: #e1e4e8;
+  --border-focus: #0033a0;
+  
+  --status-available: #10b981; /* Green */
+  --status-in-use: #f59e0b; /* Amber */
+  --status-repair: #ef4444; /* Red */
+  --status-disposed: #6b7280; /* Gray */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Base Form Elements */
+input, button, select {
+  font-family: inherit;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: var(--border-focus);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--railway-blue);
+  color: var(--text-inverse);
+}
+
+.btn-primary:hover {
+  background-color: var(--railway-blue-dark);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
