@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: ams-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ams_db
+      MYSQL_USER: ams_user
+      MYSQL_PASSWORD: ams_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./seed-demo-data.sql:/docker-entrypoint-initdb.d/seed-demo-data.sql
+
+  backend:
+    build: 
+      context: ./ams-backend/ams-backend
+    container_name: ams-backend
+    restart: always
+    environment:
+      # Automatically detected by Spring Boot to override application.yml properties
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ams_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ams_user
+      SPRING_DATASOURCE_PASSWORD: ams_password
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./ams-frontend
+    container_name: ams-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql-data:

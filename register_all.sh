@@ -1,0 +1,5 @@
+curl -s -X POST http://127.0.0.1:8081/api/v1/auth/register -H 'Content-Type: application/json' -d '{"email":"rajesh@railway.com","password":"password","role":"EMPLOYEE","fullName":"Rajesh Kumar"}'
+curl -s -X POST http://127.0.0.1:8081/api/v1/auth/register -H 'Content-Type: application/json' -d '{"email":"amit@railway.com","password":"password","role":"EMPLOYEE","fullName":"Amit Patel"}'
+curl -s -X POST http://127.0.0.1:8081/api/v1/auth/register -H 'Content-Type: application/json' -d '{"email":"sneha@railway.com","password":"password","role":"EMPLOYEE","fullName":"Sneha Reddy"}'
+curl -s -X POST http://127.0.0.1:8081/api/v1/auth/register -H 'Content-Type: application/json' -d '{"email":"vikram@railway.com","password":"password","role":"EMPLOYEE","fullName":"Vikram Singh"}'
+curl -s -X POST http://127.0.0.1:8081/api/v1/auth/register -H 'Content-Type: application/json' -d '{"email":"2024ohyeah@gmail.com","password":"password","role":"EMPLOYEE","fullName":"Raju Rajeev"}'

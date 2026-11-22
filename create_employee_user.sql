@@ -1,0 +1,1 @@
+USE ams_db; INSERT INTO users (id, created_at, is_deleted, updated_at, email, full_name, password, role) VALUES (UUID(), NOW(), 0, NOW(), 'priya@railway.com', 'Priya Sharma', '\\\.BDXk/NEnhiX0eJoPvz6swf1cwfdmkeZgUAYC79Hy4cL2', 'EMPLOYEE');

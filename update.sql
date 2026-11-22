@@ -1,0 +1,1 @@
+UPDATE assets SET warranty_expiry = DATE_ADD(CURRENT_DATE, INTERVAL FLOOR(RAND() * 25 + 2) DAY) WHERE id IN (SELECT id FROM (SELECT id FROM assets LIMIT 5) as t);
